@@ -12,47 +12,42 @@ public interface BoundedQueueTestModelInterface {
     void e_Enfileira();
 
     @Edge()
-    void e_Reinicia();
+    void e_cria();
 
     @Edge()
-    void e_EnfileiraNaoCheio();
+    void e_Reinicia();
+
+    @Vertex()
+    void v_inicio();
 
     @Vertex()
     void v_FilaVazia();
-
-    @Edge()
-    void e_criaBoundedQueue();
 
     @Edge()
     void e_Desenfileira();
 
     @Edge()
     void e_EnfileiraNulo();
-
-    @Vertex()
-    void v_ExecaoIlegalState();
+    
+    @Edge()
+    void e_EnfileiraLotado();
 
     @Edge()
     void e_EnfileiraCheio();
-
-    @Edge()
-    void e_DesenfileiraNaoCheio();
-
-    @Vertex()
-    void v_Inicializa();
 
     @Vertex()
     void v_FilaCheia();
 
     @Vertex()
-    void v_NullPointerException();
-
-    @Vertex()
     void v_FilaNaoCheia();
 
-    @Edge()
-    void e_EnfileiraExcecao();
+    @Vertex()
+    void v_ExcecaoNulo();
 
     @Edge()
     void e_DesenfileiraVazio();
+
+    @Vertex()
+    void v_ExcecaoIllegalEstate();
 }
+

@@ -1,1 +1,227 @@
-{"models":[{"name":"NewModel","id":"1ebd2b93-b4d4-4b9d-9982-2d8a0392e752","generator":"random(edge_coverage(100))","actions":["size = 0; capacity = 5; object = true;"],"vertices":[{"id":"c37481c0-4d55-49df-bdc8-07faa0caed36","name":"v_Inicializa","actions":[],"requirements":[],"properties":{"x":550.3624401913876,"y":155.91387559808612}},{"id":"17618a58-ecdb-438f-aaa6-ac347ee0a765","name":"v_FilaCheia","actions":[],"requirements":[],"properties":{"x":-189.5956937799043,"y":425.2368421052632}},{"id":"91ffd19f-62e7-4ae7-9058-52f8e3888d27","name":"v_FilaVazia","actions":[],"requirements":[],"properties":{"x":214.42942583732057,"y":158.4114832535885}},{"id":"b7929c57-ba0f-4a8e-8c6f-f3ae1d0491c3","name":"v_ExecaoIlegalState","actions":[],"requirements":[],"properties":{"x":-167.6196172248804,"y":34.636363636363654}},{"id":"551687cf-18c8-4b24-b074-2f8f06f58559","name":"v_FilaNaoCheia","actions":[],"requirements":[],"properties":{"x":24.244019138755984,"y":286.5311004784689}},{"id":"e223d3ef-e8c8-4a44-a172-4afd01c3e3e5","name":"v_NullPointerException","actions":[],"requirements":[],"properties":{"x":233.49282296650716,"y":425.61722488038276}}],"edges":[{"id":"6782e882-16ad-44ab-a9a5-7f2f498f6958","name":"e_Enfileira","guard":"size == capacity","actions":["size = size + 1"],"requirements":[],"properties":[],"sourceVertexId":"17618a58-ecdb-438f-aaa6-ac347ee0a765","targetVertexId":"b7929c57-ba0f-4a8e-8c6f-f3ae1d0491c3"},{"id":"2f4b31d1-c508-49fc-9126-1b4eec246e6b","name":"e_criaBoundedQueue","guard":"","actions":[],"requirements":[],"properties":[],"sourceVertexId":"c37481c0-4d55-49df-bdc8-07faa0caed36","targetVertexId":"91ffd19f-62e7-4ae7-9058-52f8e3888d27"},{"id":"eb472ca7-143b-4e55-ad68-d8e74c841513","name":"e_Enfileira","guard":"","actions":["size = size + 1"],"requirements":[],"properties":[],"sourceVertexId":"91ffd19f-62e7-4ae7-9058-52f8e3888d27","targetVertexId":"551687cf-18c8-4b24-b074-2f8f06f58559"},{"id":"9f0fd913-f48c-4aba-a4d7-56445d1141ce","name":"e_Enfileira","guard":"size < capacity","actions":["size = size + 1;"],"requirements":[],"properties":[],"sourceVertexId":"551687cf-18c8-4b24-b074-2f8f06f58559","targetVertexId":"551687cf-18c8-4b24-b074-2f8f06f58559"},{"id":"f9958b4c-c80e-4bab-8560-4984f9e3efa2","name":"e_Desenfileira","guard":"size - 1 == 0","actions":["size = size -1"],"requirements":[],"properties":[],"sourceVertexId":"551687cf-18c8-4b24-b074-2f8f06f58559","targetVertexId":"91ffd19f-62e7-4ae7-9058-52f8e3888d27"},{"id":"0eaac2b5-9703-4b49-8857-7ab786f77dea","name":"e_Desenfileira","guard":"size > 0","actions":["size = size -1;"],"requirements":[],"properties":[],"sourceVertexId":"551687cf-18c8-4b24-b074-2f8f06f58559","targetVertexId":"551687cf-18c8-4b24-b074-2f8f06f58559"},{"id":"80d1a391-f776-48d6-957a-63cedaac8922","name":"e_Enfileira","guard":"size + 1 == capacity","actions":["size = size + 1;"],"requirements":[],"properties":[],"sourceVertexId":"551687cf-18c8-4b24-b074-2f8f06f58559","targetVertexId":"17618a58-ecdb-438f-aaa6-ac347ee0a765"},{"id":"f4423443-26fc-4309-86ad-5c487691cafd","name":"e_Desenfileira","guard":"size == capacity","actions":["size = size -1;"],"requirements":[],"properties":[],"sourceVertexId":"17618a58-ecdb-438f-aaa6-ac347ee0a765","targetVertexId":"551687cf-18c8-4b24-b074-2f8f06f58559"},{"id":"fddfe0ea-43dc-41d1-aef6-8e50c87ebf28","name":"e_Desenfileira","guard":"","actions":["size = size - 1"],"requirements":[],"properties":[],"sourceVertexId":"91ffd19f-62e7-4ae7-9058-52f8e3888d27","targetVertexId":"b7929c57-ba0f-4a8e-8c6f-f3ae1d0491c3"},{"id":"4683d208-a03f-4baf-bac1-d12a97717d7b","name":"e_EnfileiraNulo","guard":"","actions":["object = false;"],"requirements":[],"properties":[],"sourceVertexId":"17618a58-ecdb-438f-aaa6-ac347ee0a765","targetVertexId":"e223d3ef-e8c8-4a44-a172-4afd01c3e3e5"},{"id":"e8f5f0fe-61e6-41c9-9c7e-c6fb3b19989b","name":"e_EnfileiraNulo","guard":"","actions":["object = false;"],"requirements":[],"properties":[],"sourceVertexId":"551687cf-18c8-4b24-b074-2f8f06f58559","targetVertexId":"e223d3ef-e8c8-4a44-a172-4afd01c3e3e5"},{"id":"f347f6d2-a5a2-4f50-9150-90d8fe767b3f","name":"e_EnfileiraNulo","guard":"","actions":["object = false;"],"requirements":[],"properties":[],"sourceVertexId":"91ffd19f-62e7-4ae7-9058-52f8e3888d27","targetVertexId":"e223d3ef-e8c8-4a44-a172-4afd01c3e3e5"},{"id":"622de973-ea43-44de-a062-bd951dd37480","name":"e_Reinicia","actions":[],"requirements":[],"properties":[],"sourceVertexId":"b7929c57-ba0f-4a8e-8c6f-f3ae1d0491c3","targetVertexId":"c37481c0-4d55-49df-bdc8-07faa0caed36"},{"id":"4cc3b19c-37a9-4f35-8ba7-88eb40e973b4","name":"e_Reinicia","actions":[],"requirements":[],"properties":[],"sourceVertexId":"e223d3ef-e8c8-4a44-a172-4afd01c3e3e5","targetVertexId":"c37481c0-4d55-49df-bdc8-07faa0caed36"}],"startElementId":"c37481c0-4d55-49df-bdc8-07faa0caed36"}]}
+{
+    "models": [
+        {
+            "name": "exercicio11",
+            "id": "10435ece-405f-4d6b-86a6-c8c85ae42cb0",
+            "generator": "random(edge_coverage(100))",
+            "actions": [],
+            "vertices": [
+                {
+                    "id": "292d709f-1242-467a-8038-ed4332bdd205",
+                    "name": "v_inicio",
+                    "actions": [],
+                    "requirements": [],
+                    "properties": {
+                        "x": 797.921875,
+                        "y": 123.453125
+                    }
+                },
+                {
+                    "id": "94f2cd7f-9c64-4bbe-a339-09ef28f3e82c",
+                    "name": "v_FilaVazia",
+                    "actions": [],
+                    "requirements": [],
+                    "properties": {
+                        "x": 797.8267440197266,
+                        "y": 255.39781238886744
+                    }
+                },
+                {
+                    "id": "f42f21d1-dc64-4e4d-b46d-f29bf11c2ca9",
+                    "name": "v_FilaNaoCheia",
+                    "actions": [],
+                    "requirements": [],
+                    "properties": {
+                        "x": 795.3422592332016,
+                        "y": 441.13453610390644
+                    }
+                },
+                {
+                    "id": "67b96a9d-dba9-4503-8c2d-8023b13937d0",
+                    "name": "v_FilaCheia",
+                    "actions": [],
+                    "requirements": [],
+                    "properties": {
+                        "x": 796.5657171490213,
+                        "y": 617.2850216382793
+                    }
+                },
+                {
+                    "id": "bce7d52d-8cf3-4d3e-905e-6cf04b6668ac",
+                    "name": "v_ExcecaoNulo",
+                    "actions": [],
+                    "requirements": [],
+                    "properties": {
+                        "x": 422.49924135254304,
+                        "y": 453.568165164844
+                    }
+                },
+                {
+                    "id": "ad490df5-580e-4463-aea1-f44196243fa0",
+                    "name": "v_ExcecaoIllegalEstate",
+                    "actions": [],
+                    "requirements": [],
+                    "properties": {
+                        "x": 1185.4243940766276,
+                        "y": 446.57869492341223
+                    }
+                }
+            ],
+            "edges": [
+                {
+                    "id": "75439a0c-1013-41e5-9a6a-9f8b059571d4",
+                    "name": "e_Enfileira",
+                    "guard": "size + 1 < capacity",
+                    "actions": [
+                        "size = size + 1"
+                    ],
+                    "requirements": [],
+                    "properties": [],
+                    "sourceVertexId": "94f2cd7f-9c64-4bbe-a339-09ef28f3e82c",
+                    "targetVertexId": "f42f21d1-dc64-4e4d-b46d-f29bf11c2ca9"
+                },
+                {
+                    "id": "1609b9f0-020d-45d3-816d-d6178cca37d9",
+                    "name": "e_DesenfileiraVazio",
+                    "guard": "size == 0",
+                    "actions": [
+                        "size = size - 1"
+                    ],
+                    "requirements": [],
+                    "properties": [],
+                    "sourceVertexId": "94f2cd7f-9c64-4bbe-a339-09ef28f3e82c",
+                    "targetVertexId": "ad490df5-580e-4463-aea1-f44196243fa0"
+                },
+                {
+                    "id": "375c633f-8001-4e88-9e71-756b38e4b44b",
+                    "name": "e_Enfileira",
+                    "guard": "size + 1 < capacity",
+                    "actions": [
+                        "size = size + 1"
+                    ],
+                    "requirements": [],
+                    "properties": [],
+                    "sourceVertexId": "f42f21d1-dc64-4e4d-b46d-f29bf11c2ca9",
+                    "targetVertexId": "f42f21d1-dc64-4e4d-b46d-f29bf11c2ca9"
+                },
+                {
+                    "id": "8abc9537-630f-4a2a-b02e-3e720e25c71a",
+                    "name": "e_Desenfileira",
+                    "guard": "size - 1 > 0",
+                    "actions": [
+                        "size = size - 1"
+                    ],
+                    "requirements": [],
+                    "properties": [],
+                    "sourceVertexId": "f42f21d1-dc64-4e4d-b46d-f29bf11c2ca9",
+                    "targetVertexId": "f42f21d1-dc64-4e4d-b46d-f29bf11c2ca9"
+                },
+                {
+                    "id": "2d20b553-a7de-4d17-8da4-3db0e5f1e899",
+                    "name": "e_EnfileiraCheio",
+                    "guard": "size + 1 == capacity",
+                    "actions": [
+                        "size = size + 1"
+                    ],
+                    "requirements": [],
+                    "properties": [],
+                    "sourceVertexId": "f42f21d1-dc64-4e4d-b46d-f29bf11c2ca9",
+                    "targetVertexId": "67b96a9d-dba9-4503-8c2d-8023b13937d0"
+                },
+                {
+                    "id": "43710438-93f3-46f8-832e-cd1b9a0b48f3",
+                    "name": "e_Desenfileira",
+                    "guard": "size -1 > 0",
+                    "actions": [
+                        "size = size - 1"
+                    ],
+                    "requirements": [],
+                    "properties": [],
+                    "sourceVertexId": "67b96a9d-dba9-4503-8c2d-8023b13937d0",
+                    "targetVertexId": "f42f21d1-dc64-4e4d-b46d-f29bf11c2ca9"
+                },
+                {
+                    "id": "4feee0b8-1e0f-4562-983f-375f644f08da",
+                    "name": "e_DesenfileiraVazio",
+                    "guard": "size - 1 == 0",
+                    "actions": [
+                        "size = size -1"
+                    ],
+                    "requirements": [],
+                    "properties": [],
+                    "sourceVertexId": "f42f21d1-dc64-4e4d-b46d-f29bf11c2ca9",
+                    "targetVertexId": "94f2cd7f-9c64-4bbe-a339-09ef28f3e82c"
+                },
+                {
+                    "id": "c8eea83c-1b19-450d-aaa7-c0118769c8db",
+                    "name": "e_EnfileiraNulo",
+                    "actions": [],
+                    "requirements": [],
+                    "properties": [],
+                    "sourceVertexId": "67b96a9d-dba9-4503-8c2d-8023b13937d0",
+                    "targetVertexId": "bce7d52d-8cf3-4d3e-905e-6cf04b6668ac"
+                },
+                {
+                    "id": "1a72694b-057d-4ba0-9b6b-7991a30769e4",
+                    "name": "e_EnfileiraNulo",
+                    "actions": [],
+                    "requirements": [],
+                    "properties": [],
+                    "sourceVertexId": "f42f21d1-dc64-4e4d-b46d-f29bf11c2ca9",
+                    "targetVertexId": "bce7d52d-8cf3-4d3e-905e-6cf04b6668ac"
+                },
+                {
+                    "id": "0277fd83-30e6-44f9-b21d-d5d585ba907c",
+                    "name": "e_EnfileiraNulo",
+                    "actions": [],
+                    "requirements": [],
+                    "properties": [],
+                    "sourceVertexId": "94f2cd7f-9c64-4bbe-a339-09ef28f3e82c",
+                    "targetVertexId": "bce7d52d-8cf3-4d3e-905e-6cf04b6668ac"
+                },
+                {
+                    "id": "5e1dac88-0e6e-4346-bc2c-096669966e1a",
+                    "name": "e_EnfileiraCheio",
+                    "guard": "size == capacity",
+                    "actions": [
+                        "size = size + 1"
+                    ],
+                    "requirements": [],
+                    "properties": [],
+                    "sourceVertexId": "67b96a9d-dba9-4503-8c2d-8023b13937d0",
+                    "targetVertexId": "ad490df5-580e-4463-aea1-f44196243fa0"
+                },
+                {
+                    "id": "3b694c0c-9576-4671-8920-667cc8e56469",
+                    "name": "e_Reinicia",
+                    "actions": [],
+                    "requirements": [],
+                    "properties": [],
+                    "sourceVertexId": "bce7d52d-8cf3-4d3e-905e-6cf04b6668ac",
+                    "targetVertexId": "292d709f-1242-467a-8038-ed4332bdd205"
+                },
+                {
+                    "id": "18c9d2f8-f165-4602-b132-aae6db468922",
+                    "name": "e_Reinicia",
+                    "actions": [],
+                    "requirements": [],
+                    "properties": [],
+                    "sourceVertexId": "ad490df5-580e-4463-aea1-f44196243fa0",
+                    "targetVertexId": "292d709f-1242-467a-8038-ed4332bdd205"
+                },
+                {
+                    "id": "637f6f2b-72cf-40c8-a081-fd3f76f48069",
+                    "name": "e_cria",
+                    "actions": [
+                        "capacity = 5; size = 0"
+                    ],
+                    "requirements": [],
+                    "properties": [],
+                    "sourceVertexId": "292d709f-1242-467a-8038-ed4332bdd205",
+                    "targetVertexId": "94f2cd7f-9c64-4bbe-a339-09ef28f3e82c"
+                }
+            ],
+            "startElementId": "292d709f-1242-467a-8038-ed4332bdd205"
+        }
+    ]
+}
