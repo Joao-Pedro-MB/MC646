@@ -28,9 +28,6 @@ public interface BoundedQueueTestModelInterface {
 
     @Edge()
     void e_EnfileiraNulo();
-    
-    @Edge()
-    void e_EnfileiraLotado();
 
     @Edge()
     void e_EnfileiraCheio();

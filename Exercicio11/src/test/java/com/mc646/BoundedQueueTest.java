@@ -19,7 +19,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
 
-@GraphWalker(value = "quick_random(edge_coverage(100))", start = "v_Inicializa")
+@GraphWalker(value = "quick_random(edge_coverage(100))", start = "v_Inicio")
 public class BoundedQueueTest extends ExecutionContext implements BoundedQueueTestModelInterface {
 	BoundedQueue boundedQueue = null;
 	int element1 = 1;
@@ -76,12 +76,6 @@ public class BoundedQueueTest extends ExecutionContext implements BoundedQueueTe
 	}
 
 	@Override
-	public void e_EnfileiraCheio() {
-		System.out.println("Running: e_EnfileiraCheio");
-		boundedQueue.enQueue(element1);
-	}
-
-	@Override
 	public void v_FilaCheia() {
 		System.out.println("Running: v_FilaCheia");
 		Assertions.assertTrue(boundedQueue.isFull());
@@ -92,6 +86,7 @@ public class BoundedQueueTest extends ExecutionContext implements BoundedQueueTe
 		System.out.println("Running: v_FilaNaoCheia");
 		Assertions.assertFalse(boundedQueue.isFull());
 		Assertions.assertFalse(boundedQueue.isEmpty());
+		Assertions.assertNotNull(boundedQueue.toString());
 	}
 
 	@Override
@@ -111,8 +106,8 @@ public class BoundedQueueTest extends ExecutionContext implements BoundedQueueTe
 	}
 
 	@Override
-	public void e_EnfileiraLotado() {
-		System.out.println("Running: e_EnfileiraLotado");
+	public void e_EnfileiraCheio() {
+		System.out.println("Running: e_EnfileiraCheio");
 		try {
 			boundedQueue.enQueue(element1);
 		} catch (IllegalStateException e) {
@@ -125,7 +120,6 @@ public class BoundedQueueTest extends ExecutionContext implements BoundedQueueTe
 		System.out.println("Running: v_ExcecaoIllegalEstate");
 		Assertions.assertTrue(illegalStateException);
 	}
-
 
 	@Test
 	public void TestPath() {
@@ -6664,7 +6658,7 @@ public class BoundedQueueTest extends ExecutionContext implements BoundedQueueTe
 		v_FilaNaoCheia();
 		e_EnfileiraCheio();
 		v_FilaCheia();
-		e_EnfileiraLotado();
+		e_EnfileiraCheio();
 		v_ExcecaoIllegalEstate();
 		e_Reinicia();
 		v_inicio();
@@ -6736,7 +6730,7 @@ public class BoundedQueueTest extends ExecutionContext implements BoundedQueueTe
 		v_FilaNaoCheia();
 		e_EnfileiraCheio();
 		v_FilaCheia();
-		e_EnfileiraLotado();
+		e_EnfileiraCheio();
 		v_ExcecaoIllegalEstate();
 		e_Reinicia();
 		v_inicio();
@@ -8396,7 +8390,7 @@ public class BoundedQueueTest extends ExecutionContext implements BoundedQueueTe
 		v_FilaNaoCheia();
 		e_EnfileiraCheio();
 		v_FilaCheia();
-		e_EnfileiraLotado();
+		e_EnfileiraCheio();
 		v_ExcecaoIllegalEstate();
 		e_Reinicia();
 		v_inicio();

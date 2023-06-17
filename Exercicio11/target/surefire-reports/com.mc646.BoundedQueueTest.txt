@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.mc646.BoundedQueueTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.163 s - in com.mc646.BoundedQueueTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.14 s - in com.mc646.BoundedQueueTest
